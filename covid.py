@@ -1,10 +1,11 @@
+#importing essential libraries.
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 print('Modules are imported.')
 
-corona_dataset_csv = pd.read_csv('covid19_Confirmed_dataset.csv')
+corona_dataset_csv = pd.read_csv(r'') #Enter file path
 corona_dataset_csv.drop(['Lat','Long'],axis=1,inplace=True)
 corona_dataset_aggregated = corona_dataset_csv.groupby("Country/Region").sum()
 
@@ -21,7 +22,7 @@ corona_dataset_aggregated['max infection rate'] = max_infection_rates
 
 corona_data = pd.DataFrame(corona_dataset_aggregated['max infection rate'])
 
-world_happiness_report = pd.read_csv("worldwide_happiness_report.csv")
+world_happiness_report = pd.read_csv(r"") #enter file path
 
 columns_to_dropped = ['Overall rank','Score','Generosity','Perceptions of corruption']
 world_happiness_report.drop(columns_to_dropped,axis=1 , inplace=True)
